@@ -1,0 +1,37 @@
+function myfunction(){
+var APIKEY = "f9bcc7e4314b08bea3210a7117170241";
+var baseURL="https://api.themoviedb.org/3/";
+
+let url="".concat(baseURL,'configuration?api_key=',APIKEY);
+fetch(url)
+.then((result)=>{
+    console.log("hello");
+    return result.json();
+})
+.then((data)=>{
+    console.log('in console');
+   var name = document.getElementById('moviename').value;
+    runSearch(name);
+})
+}
+
+let runSearch=function(keyword){
+    let url=''.concat('https://api.themoviedb.org/3/','search/movie?api_key=','f9bcc7e4314b08bea3210a7117170241','&query=',keyword);
+    fetch(url)
+    .then(result=>result.json())
+    .then((data)=>{
+        document.getElementById('output').innerHTML=JSON.stringify(data,null,4);
+    })
+    
+}
+
+let rendersearch=function(data)
+{
+	for ( var key in data ) {
+        htmlText += '<div class="div-conatiner">';
+        htmlText += '<p class="poster_path"> Name: ' + data[key].poster_path + '</p>';
+        htmlText += '<p class="original_title"> Location: ' + data[key].original_title + '</p>';
+        htmlText += '<p class="overview"> Description: ' + data[key].overview + '</p>';
+        htmlText += '<p class="release_date"> Created by: ' + data[key].release_date + '</p>';
+        htmlText += '</div>';
+    }}

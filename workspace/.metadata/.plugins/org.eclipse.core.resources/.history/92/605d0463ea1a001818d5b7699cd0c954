@@ -1,0 +1,37 @@
+function myfunction(){
+var APIKEY = "f9bcc7e4314b08bea3210a7117170241";
+var baseURL="https://api.themoviedb.org/3/";
+alert();
+let url="".concat(baseURL,'configuration?api_key=',APIKEY);
+fetch(url)
+.then((result)=>{
+    console.log("hello");
+    return result.json();
+})
+.then((data)=>{
+    console.log('in console');
+    runSearch('skyfall');
+})
+}
+
+let runSearch=function(keyword){
+    let url=''.concat('https://api.themoviedb.org/3/','search/movie?api_key=','f9bcc7e4314b08bea3210a7117170241','&query=',keyword);
+    fetch(url)
+    .then(result=>result.json())
+    .then((data)=>{
+        document.getElementById('output').innerHTML=JSON.stringify(data,null,4);
+    })
+    
+}
+
+/*let rendersearch=function(data)
+{
+	for ( var key in data ) {
+        htmlText += '<div class="div-conatiner">';
+        htmlText += '<p class="p-name"> Name: ' + data[key].name + '</p>';
+        htmlText += '<p class="p-loc"> Location: ' + data[key].location + '</p>';
+        htmlText += '<p class="p-desc"> Description: ' + data[key].description + '</p>';
+        htmlText += '<p class="p-created"> Created by: ' + data[key].created_by + '</p>';
+        htmlText += '<p class="p-uname"> Username: ' + data[key].users_name + '</p>';
+        htmlText += '</div>';
+    }}*/

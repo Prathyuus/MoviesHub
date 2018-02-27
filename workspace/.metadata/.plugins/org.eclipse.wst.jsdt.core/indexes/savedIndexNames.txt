@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+/home/sapient/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2260097378.index
+4002829723.index
+1256882219.index
+3675209915.index
+4002829723.index
+336342360.index
+3663615376.index
+2903875722.index

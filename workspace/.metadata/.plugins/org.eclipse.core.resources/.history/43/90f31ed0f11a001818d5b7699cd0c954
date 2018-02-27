@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Movie Hub</title>
+
+</head>
+<body>
+
+<center>
+<form>
+<input type="text" name = "moviename" id = "data">
+	
+      <button onClick="getData()">Search</button>
+      </form>
+      
+      <script>
+function getData(){
+      var xmlHttp = new XMLHttpRequest();
+      var word= document.getElementById("data").value;
+      var url = "https://api.themoviedb.org/3/search/movie?query="+word+"&api_key=628feb1e5d19aa715bd6f0824546c81d";
+      xmlHttp.open("GET",url,true);
+      xmlHttp.send();
+      xmlHttp.onreadystatechange = function() {
+          if(this.readyState == 4 && this.status == 200){
+              var myArr= JSON.parse(this.responseText);
+              var dataObj= JSON.stringify(myArr);
+          document.write(dataObj);
+          }
+      };
+    }
+</script>
+
+      <p id="output"></p>
+      
+
+
+</center>
+</body>
+</html>

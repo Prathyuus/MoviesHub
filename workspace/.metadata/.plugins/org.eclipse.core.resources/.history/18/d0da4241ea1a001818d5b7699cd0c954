@@ -1,0 +1,27 @@
+function myfunction(){
+var APIKEY = "f9bcc7e4314b08bea3210a7117170241";
+var baseURL="https://api.themoviedb.org/3/";
+alert();
+let url="".concat(baseURL,'configuration?api_key=',APIKEY);
+fetch(url)
+.then((result)=>{
+    console.log("hello");
+    return result.json();
+})
+.then((data)=>{
+    console.log('in console');
+    runSearch(moviename);
+})
+}
+
+let runSearch=function(keyword){
+    let url=''.concat('https://api.themoviedb.org/3/','search/movie?api_key=','f9bcc7e4314b08bea3210a7117170241','&query=',keyword);
+    fetch(url)
+    .then(result=>result.json())
+    .then((data)=>{
+        document.getElementById('output').innerHTML=JSON.stringify(data,null,4);
+    })
+    
+}
+
+
