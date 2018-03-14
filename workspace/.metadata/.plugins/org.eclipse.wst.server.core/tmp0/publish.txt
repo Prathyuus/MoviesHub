@@ -1,3 +1,6 @@
 #Tomcat publish data
-#Tue Feb 27 19:12:01 IST 2018
+#Wed Mar 07 19:34:23 IST 2018
+org.eclipse.jst.jee.server\:TatMovie=/home/sapient/web/apache-tomcat-8.5.28/wtpwebapps/TatMovie
 org.eclipse.jst.jee.server\:Moviehub=/home/sapient/web/apache-tomcat-8.5.28/wtpwebapps/Moviehub
+org.eclipse.jst.jee.server\:MovieHub1=/home/sapient/web/apache-tomcat-8.5.28/wtpwebapps/MovieHub1
+org.eclipse.jst.jee.server\:Moviee=/home/sapient/web/apache-tomcat-8.5.28/wtpwebapps/Moviee
